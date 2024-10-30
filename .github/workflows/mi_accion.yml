@@ -1,0 +1,27 @@
+name: Ejecutar Tarea Cada 3 Minutos
+
+on:
+  schedule:
+    - cron: '*/3 * * * *'  # Ejecutar cada 3 minutos
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Cambia a la versión de Python que necesites
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Asegúrate de tener un archivo requirements.txt
+
+      - name: Run script
+        run: |
+          python tu_script.py  # Reemplaza con el nombre de tu archivo Python
