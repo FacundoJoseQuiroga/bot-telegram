@@ -1,8 +1,8 @@
 name: Ejecutar Tarea Cada 3 Minutos
 
 on:
-  schedule:
-    - cron: '*/3 * * * *'  # Ejecutar cada 3 minutos
+#  schedule:
+ #   - cron: '*/3 * * * *'  # Ejecutar cada 3 minutos
 
 jobs:
   run-task:
